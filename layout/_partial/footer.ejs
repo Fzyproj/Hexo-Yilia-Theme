@@ -1,0 +1,26 @@
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+            <!--如果有设置theme.since，并且时间小于当前时间（年份），形式为：@ 2018 - 2019(+作者/标题)；否则默认为当前年份(+作者/标题)。 -->
+    		<% if (theme.since && !isNaN(theme.since) && theme.since < date(new Date(), 'YYYY')) { %>
+                &copy; <%- theme.since %>-<%= date(new Date(), 'YYYY') %>
+            <% } else { %>
+                &copy; <%= date(new Date(), 'YYYY') %>
+            <% } %>
+            <%= config.author || config.title %>
+    	</div>
+<% if (theme.busuanzi && theme.busuanzi.enable){ %>
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_site_pv">
+                访问量<span id="busuanzi_value_site_pv"></span>次
+        </span>
+        <span class="post-meta-divider">|</span>
+        <span id="busuanzi_container_site_uv" style='display:none'>
+                访客数<span id="busuanzi_value_site_uv"></span>人
+        </span>
+        <script async src="/busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <% } %>
+</footer>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
